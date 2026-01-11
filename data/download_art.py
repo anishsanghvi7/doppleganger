@@ -13,7 +13,7 @@ LIMIT = 50
 def setup_folder():
     if not os.path.exists(SAVE_FOLDER):
         os.makedirs(SAVE_FOLDER)
-        print(f"📁 Created folder: {SAVE_FOLDER}")
+        print(f"Created folder: {SAVE_FOLDER}")
 
 def get_object_ids():
     """Ask The Met for IDs of objects that match 'portrait'"""
@@ -24,7 +24,7 @@ def get_object_ids():
     # The API returns a list of IDs
     total = data['total']
     ids = data['objectIDs'][:LIMIT] # Just take the first few
-    print(f"✅ Found {total} paintings. Fetching the first {len(ids)}...")
+    print(f"Found {total} paintings. Fetching the first {len(ids)}...")
     return ids
 
 def download_image(object_id):
